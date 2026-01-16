@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hindi Language Quiz</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Noto+Sans+Devanagari:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="main-container">
+        <!-- Top Header -->
+        <div class="top-header">
+            <div class="header-left">
+                <div class="menu-btn" id="menuBtn">
+                    <i class="fas fa-bars"></i>
+                </div>
+                <div>
+                    <div class="app-title">Hindi Language Quiz</div>
+                    <div class="user-id" id="userIdDisplay">User ID: Loading...</div>
+                </div>
+            </div>
+            <div class="timer-container">
+                <i class="fas fa-clock"></i>
+                <span id="testTimer">15:00</span>
+            </div>
+        </div>
+        
+        <!-- Content Area -->
+        <div class="content-area">
+            <!-- Left Sidebar -->
+            <div class="left-sidebar" id="leftSidebar">
+                <div class="sidebar-header">
+                    Question Grid
+                    <div class="close-sidebar" id="closeSidebar">
+                        <i class="fas fa-times"></i>
+                    </div>
+                </div>
+                
+                <div class="question-grid-container">
+                    <div class="grid-title">Click on question number</div>
+                    <div class="grid-scroll-container">
+                        <div class="question-grid" id="questionGrid"></div>
+                    </div>
+                </div>
+                
+                <div class="sidebar-footer">
+                    <button class="sidebar-submit-btn" id="submitTestBtn">
+                        <i class="fas fa-paper-plane"></i>
+                        Submit Test
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Main Content -->
+            <div class="main-content">
+                <div class="question-scroll-container">
+                    <!-- Question Info -->
+                    <div class="question-info">
+                        <div class="question-number">
+                            <div class="qno-circle" id="qno">1</div>
+                            <div class="qno-text">Question <span id="currentQ">1</span> of <span id="totalQ">20</span></div>
+                        </div>
+                        <div class="timer-info">
+                            <i class="fas fa-stopwatch"></i>
+                            <span id="qTimer">0</span> seconds
+                        </div>
+                    </div>
+                    
+                    <!-- Question Card -->
+                    <div class="question-card">
+                        <div class="question-text" id="questionText"></div>
+                    </div>
+                    
+                    <!-- Options -->
+                    <div class="options-container" id="optionsContainer"></div>
+                </div>
+                
+                <!-- Fixed Navigation Buttons -->
+                <div class="fixed-nav-buttons">
+                    <button class="nav-btn prev-btn" id="prevBtn">
+                        <i class="fas fa-arrow-left"></i>
+                        Previous
+                    </button>
+                    <button class="nav-btn next-btn" id="nextBtn">
+                        <i class="fas fa-arrow-right"></i>
+                        Next
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Sidebar Overlay -->
+        <div class="sidebar-overlay" id="sidebarOverlay"></div>
+    </div>
+    
+    <!-- Popup Modals -->
+    <div class="popup-overlay" id="submitPopup">
+        <div class="popup-content">
+            <div class="popup-header">
+                <div class="popup-icon">
+                    <i class="fas fa-exclamation-triangle"></i>
+                </div>
+                <div class="popup-title">Submit Test?</div>
+            </div>
+            <div class="popup-body">
+                Are you sure you want to submit the test? Once submitted, you cannot change your answers.
+            </div>
+            <div class="popup-actions">
+                <button class="popup-btn cancel" id="cancelSubmitBtn">
+                    <i class="fas fa-times"></i>
+                    No
+                </button>
+                <button class="popup-btn confirm" id="confirmSubmitBtn">
+                    <i class="fas fa-check"></i>
+                    Yes
+                </button>
+            </div>
+        </div>
+    </div>
+    
+    <div class="popup-overlay" id="timeUpPopup">
+        <div class="popup-content">
+            <div class="popup-header">
+                <div class="popup-icon">
+                    <i class="fas fa-clock"></i>
+                </div>
+                <div class="popup-title">Time's Up!</div>
+            </div>
+            <div class="popup-body">
+                Your test time has ended. Your answers are being submitted automatically.
+            </div>
+            <div class="popup-actions">
+                <button class="popup-btn confirm" id="viewResultsBtn">
+                    <i class="fas fa-chart-bar"></i>
+                    View Results
+                </button>
+            </div>
+        </div>
+    </div>
+    
+    <div class="loading" id="loadingScreen">
+        <div class="loading-spinner"></div>
+        <div>Saving data...</div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
